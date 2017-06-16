@@ -4,9 +4,9 @@ This repository contains all of the projects that I completed in pursuit of the 
 
 The program modules and their related projects are as follows:
 
-1. Machine Learning Foundations: `1_boston_housing`
+1. Machine Learning Foundations: `1_boston_housing` (accepted 31 May 2017)
 2. Career: Orientation: _No project_
-3. Supervised Learning: `2_finding_donors`
+3. Supervised Learning: `2_finding_donors` (accepted 12 June 2017)
 4. Unsupervised Learning: `3_customer_segments` (In progress)
 5. Reinforcement Learning: _Coming Soon!_
 6. Deep Learning: _Coming Soon!_
