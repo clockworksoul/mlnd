@@ -11804,7 +11804,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11862,7 +11862,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display a description of the dataset</span>
@@ -11994,7 +11994,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Select three indices of your choice you wish to sample from the dataset</span>
@@ -12191,7 +12191,7 @@ Chosen samples of wholesale customers dataset:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -12242,18 +12242,6 @@ Delicatessen -2.2547115372
 </div>
 </div>
 
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/opt/conda/envs/python2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-  &#34;This module will be removed in 0.20.&#34;, DeprecationWarning)
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -12281,7 +12269,8 @@ Delicatessen -2.2547115372
 <li>Detergents_Paper 0.271666980627</li>
 <li>Delicatessen -2.2547115372</li>
 </ul>
-<p>Of these, "fresh", "frozen", and "delicatessen" failed to fit the data (i.e., the regressions had negative R^2 scores). "Grocery", on the other hand, fit very well with an R^2 score of 0.68.</p>
+<p>Of these, the "grocery" feature was by far the most predictive of customer' spending habits, with an R^2 score of 0.68. If there's a single stand-out feature that we would call "necessary", it would be this one. The "detergents_paper" and "milk" scores were less determinative, and while useful their relatively weak fit suggests that the loss of either of these is unlikely to dramatically affect the final result.</p>
+<p>"Fresh" and "frozen" both fail to fit the data (i.e., the regressions had negative R^2 scores, with scores of -0.38 and -0.21, respectively. "Delicatessen" in particular scores abysmally with a score of -2.25. Given their lack of fit to the data, it appears that none of these latter three features are necessary for identifying customers' spending habits.</p>
 
 </div>
 </div>
@@ -12297,7 +12286,7 @@ Delicatessen -2.2547115372
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a scatter matrix for each pair of features in the data</span>
@@ -13762,7 +13751,7 @@ GYZhGIZhGIZhLJP/D/PKRcsmFaYvAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> Some pairs do appear to exhibit some degree of correlation, as follows (based on intuitive approximation):</p>
+<p><strong>Answer:</strong> In the majority of the distributions -- those that apparently reflect no relationship -- the data is clustered roughly circularly around the origin. Between some pairs, however, the data clearly appear to trend along a line, suggesting some degree of correlation, as follows (based on intuitive approximation):</p>
 <ul>
 <li>Milk: Grocery and Detergents/Paper</li>
 <li>Grocery: Milk and Detergents/Paper</li>
@@ -13798,7 +13787,7 @@ GYZhGIZhGIZhLJP/D/PKRcsmFaYvAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Scale the data using the natural logarithm</span>
@@ -17241,7 +17230,7 @@ QmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">log_data</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
@@ -17437,7 +17426,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">repeats</span> <span class="o">=</span> <span class="p">{}</span>
@@ -18235,7 +18224,7 @@ Stddev: 6.66513305201 +/- 1.3108315943
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
@@ -18599,7 +18588,8 @@ JElSh4FJkiRJkjoMTJIkSZLUYWCSJEmSpI7/B/+dfciLMip2AAAAAElFTkSuQmCC
 <p><strong>Answer:</strong> The variance explained by the first and second princial components sums to <code>0.7068</code>; the first four sums to <code>0.9311</code>. Each of the above components describes a set of linearly uncorrelated variables and the features that contribute to them.</p>
 <p>If I'm interpreting this chart correctly, the three features that we had previously identified "by eye" as probably correlated ("milk", "grocery" and "detergents/paper") are related, as are (to a lesser degree) "fresh" and "frozen", as demonstrated by their shared magnitude and directionality in the first principal component, which in total contributes to a sizable amount of the overall varince (0.4430).</p>
 <p>The features "fresh", "milk" and "grocery" contribute almost entirely to the second principal component, which describes about a quarter of the total variance (0.2638).</p>
-<p>The third and fourth principal components describe additional variance -- primarily between "fresh", "frozen", and "delicatessen" -- indicating that the relationships between these features isn't as clear-cut as we'd hope. What is especially interesting however, is what is mostly NOT in these two components: "milk", "grocery", and "detergents/paper". This lack of "clarification" in additional dimensions suggests that the majority of the variance between these features was described in the first principal component, further suggesting a strong relationship between these features.</p>
+<p>The third and fourth principal components describe additional variance -- primarily between "fresh", "frozen", and "delicatessen" -- indicating that the relationships between these features isn't as clear-cut as we'd hope. In the third dimension, we see variance contributions from "fresh", "frozen", and "delicatessen", with "fresh" contributing in the opposite direction as the latter two features. With the fourth dimension, "frozen" is the primary contributer, while "fresh" and "detergents/paper" lend some weight in the opposing orientation.</p>
+<p>What is especially interesting about the third and fourth principal components, however, is what is mostly NOT present: "milk", "grocery", and "detergents/paper". This lack of "clarification" in additional dimensions suggests that the majority of the variance between these features was described in the first principal component, further suggesting a strong relationship between these features.</p>
 
 </div>
 </div>
@@ -18615,7 +18605,7 @@ JElSh4FJkiRJkjoMTJIkSZLUYWCSJEmSpI7/B/+dfciLMip2AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display sample log-data after having a PCA transformation applied</span>
@@ -18706,7 +18696,7 @@ JElSh4FJkiRJkjoMTJIkSZLUYWCSJEmSpI7/B/+dfciLMip2AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Apply PCA by fitting the good data with only two dimensions</span>
@@ -18739,7 +18729,7 @@ JElSh4FJkiRJkjoMTJIkSZLUYWCSJEmSpI7/B/+dfciLMip2AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display sample log-data after applying PCA transformation in two dimensions</span>
@@ -18809,7 +18799,7 @@ JElSh4FJkiRJkjoMTJIkSZLUYWCSJEmSpI7/B/+dfciLMip2AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Create a biplot</span>
@@ -18826,13 +18816,13 @@ JElSh4FJkiRJkjoMTJIkSZLUYWCSJEmSpI7/B/+dfciLMip2AAAAAElFTkSuQmCC
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+<div class="prompt output_prompt">Out[34]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fea1215dc90&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa32b78ad10&gt;</pre>
 </div>
 
 </div>
@@ -19937,7 +19927,7 @@ RU5ErkJggg==
 <p><strong>Answer:</strong> K-means is a conceptially simple and computationally efficient clustering algorithm that generally works quite well provided that its assumptions about the data are largely valid:</p>
 <ul>
 <li>the number of clusters is known (or strongly suspected) and equal to <code>k</code> (the pre-declared number of clustering centroids): the number of clusters predicted is always exactly <code>k</code>;</li>
-<li>the sizes and densities of the putative clusters are fairly well balanced within the dataset; k-means is rather sensitive to outliers, particularly when the size of the dataset is limited;</li>
+<li>the sizes and densities of the putative clusters are fairly well balanced within the dataset; <em>k-means</em> is rather sensitive to outliers, particularly when the size of the dataset is limited;</li>
 <li>the joint distribution of features within each cluster is spherical and non-overlapping within the dimensionality of the data; <em>k-means</em> is an exclusive cluster algorithm that cannot predict overlapping clusters.</li>
 </ul>
 <p>The Gaussian Mixture Model clustering algorithm takes a fundamentally different approach to clustering that assumes all members of the dataset can be described by a mixture of Gaussian distributions with unknown parameters, and therefore defines clusters as the subsets of data belonging most likely to the same distribution. Because membership of a given datapoint in a cluster is probabalistic rather than exclusive, this approach is much more suitable than <em>k-means</em> for data that is overlapping or non-spherical, or for which the number of expected cluster is unknown prior to application of the algorithm.</p>
@@ -19969,7 +19959,7 @@ RU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
@@ -19981,7 +19971,7 @@ RU5ErkJggg==
 
 <span class="c1"># Test a range of numbers of clusters, from 2 to 6.</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">clusterer</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
+    <span class="n">clusterer</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
     <span class="n">preds</span> <span class="o">=</span> <span class="n">clusterer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
     <span class="n">score</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
     <span class="k">print</span> <span class="s2">&quot;n={} score={}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
@@ -19991,7 +19981,7 @@ RU5ErkJggg==
         <span class="n">best_n</span> <span class="o">=</span> <span class="n">n</span>
 
 <span class="c1"># TODO: Apply your clustering algorithm of choice to the reduced data </span>
-<span class="n">clusterer</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">best_n</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
+<span class="n">clusterer</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">best_n</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
 
 <span class="c1"># TODO: Predict the cluster for each data point</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">clusterer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
@@ -20029,17 +20019,6 @@ n=6 score=0.326139450471
 </div>
 </div>
 
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/opt/conda/envs/python2/lib/python2.7/site-packages/ipykernel_launcher.py:33: FutureWarning: comparison to `None` will result in an elementwise object comparison in the future.
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -20073,7 +20052,7 @@ n=6 score=0.326139450471
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display the results of the clustering from implementation</span>
@@ -20738,7 +20717,7 @@ AABazv8Hiwfr6Ur1sAsAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Inverse transform the centers</span>
@@ -20847,7 +20826,7 @@ AABazv8Hiwfr6Ur1sAsAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display the predictions</span>
@@ -20926,7 +20905,7 @@ Sample point 2 predicted to be in Cluster 1
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> When viewed in terms of spoilage, it's likely that customers who purchase large amounts of particular goods ("fresh" and "milk" in particular) would react negatively to the proposed change in service. The amounts of the two most perishable categories of goods are each purchased by different clusters, and in roughly similar quantities. It is likely that most customers would react equally poorly to the change.</p>
+<p><strong>Answer:</strong> To run a controlled A/B test on the customer base for this proposed service change, the distributer would divide its customers into two populations: one whose service is unchanged, and another whose service is reduced to three days a week. However, because the distributer effectively has <em>two</em> populations of customers, each of whom they're considering the changes seperately, they would want to perform an indepenendent A/B test for each of the two groups, in effect running two seperate experiments, with two contols (one for each cluster) and two corresponding experimental groups. This would allow the distributer to know how each individual population is affected, distinct from the other.</p>
 
 </div>
 </div>
@@ -20963,7 +20942,7 @@ Sample point 2 predicted to be in Cluster 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display the clustering results based on &#39;Channel&#39; data</span>
