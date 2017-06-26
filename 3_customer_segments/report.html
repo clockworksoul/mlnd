@@ -11804,7 +11804,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11862,7 +11862,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display a description of the dataset</span>
@@ -11994,7 +11994,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Select three indices of your choice you wish to sample from the dataset</span>
@@ -12002,7 +12002,7 @@ div#notebook {
 <span class="c1"># A quick loop to find rows with clear statistical outliers.</span>
 <span class="c1"># Reviewer: There&#39;s certainly a better way to do this. Can you recommend one?</span>
 
-<span class="n">MIN_SIGMA</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1"># &gt;99.999% (assuming standard distribution, which should be sufficient for this purpose)</span>
+<span class="n">MIN_SIGMA</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1"># &gt;99.999% (treating standard distribution; not strictly correct but adequate since we&#39;re looking for far-right outliers anyway)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
     <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">description</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
@@ -12191,7 +12191,7 @@ Chosen samples of wholesale customers dataset:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -12269,8 +12269,8 @@ Delicatessen -2.2547115372
 <li>Detergents_Paper 0.271666980627</li>
 <li>Delicatessen -2.2547115372</li>
 </ul>
-<p>Of these, the "grocery" feature was by far the most predictive of customer' spending habits, with an R^2 score of 0.68. If there's a single stand-out feature that we would call "necessary", it would be this one. The "detergents_paper" and "milk" scores were less determinative, and while useful their relatively weak fit suggests that the loss of either of these is unlikely to dramatically affect the final result.</p>
-<p>"Fresh" and "frozen" both fail to fit the data (i.e., the regressions had negative R^2 scores, with scores of -0.38 and -0.21, respectively. "Delicatessen" in particular scores abysmally with a score of -2.25. Given their lack of fit to the data, it appears that none of these latter three features are necessary for identifying customers' spending habits.</p>
+<p>Of these, the "grocery" feature was by far the most predictive of customer' spending habits, with an R^2 score of 0.68; the "detergents_paper" and "milk" scores were less determinative: 0.27 and 0.15 respectively. The positive scores, particularly that of "grocery", suggest a correlation with other features in the dataset, making each of these features largely redundant and therefore less important individually.</p>
+<p>"Fresh" and "frozen" both fail to fit the data (i.e., the regressions had negative R^2 scores of -0.38 and -0.21, respectively). "Delicatessen" in particular scores abysmally with an R^2 of -2.25. Their lack of fit for these features to the rest of the data indicates that they are not duplicating any existing information, and therefore may be individually important.</p>
 
 </div>
 </div>
@@ -12286,7 +12286,7 @@ Delicatessen -2.2547115372
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a scatter matrix for each pair of features in the data</span>
@@ -13751,13 +13751,8 @@ GYZhGIZhGIZhLJP/D/PKRcsmFaYvAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> In the majority of the distributions -- those that apparently reflect no relationship -- the data is clustered roughly circularly around the origin. Between some pairs, however, the data clearly appear to trend along a line, suggesting some degree of correlation, as follows (based on intuitive approximation):</p>
-<ul>
-<li>Milk: Grocery and Detergents/Paper</li>
-<li>Grocery: Milk and Detergents/Paper</li>
-<li>Detergents/Paper: Milk and Grocery</li>
-</ul>
-<p>The "grocery" correlations are particularly evident, which aligns with the previously determined R^2=0.68. The correlations of "milk" with "detergents/paper" is less obvious, but still stands out; these observations agree with the R^2 scores of 0.156 and 0.271, respectively.</p>
+<p><strong>Answer:</strong> In all of the feature data density distributions -- those along the diagonal of the matrix -- the peak of the curve lies close to the origin, with a long tail to the right. That is, they are all strngly right-skewed.</p>
+<p>Interestingly, between the three features identified above as likely correlating -- "grocery", "detergents_paper", and (to a lesser degree) "milk" -- the scatter plots present very differently: rather than clustering near the origin, the data clearly appear to trend along a line.  This is the case between <em>all</em> members of this set, further supporting our hypothesized joint correlation between these three features and our previous conclusion that they are individually redundant with one another.</p>
 
 </div>
 </div>
@@ -13787,7 +13782,7 @@ GYZhGIZhGIZhLJP/D/PKRcsmFaYvAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Scale the data using the natural logarithm</span>
