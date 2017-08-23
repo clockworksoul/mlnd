@@ -9,5 +9,5 @@ The program modules and their related projects are as follows:
 3. Supervised Learning: `2_finding_donors` (accepted 12 June 2017)
 4. Unsupervised Learning: `3_customer_segments` (accepted 27 June 2017)
 5. Reinforcement Learning: _Coming Soon!_
-6. Deep Learning: _Coming Soon!_
+6. Deep Learning: `5_dog_breed_classifier` (in progress)
 7. Machine Learning Capstone: _Coming Soon!_
